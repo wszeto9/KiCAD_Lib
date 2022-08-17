@@ -1,0 +1,23 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 352d7abe-fc72-4473-8b68-62eecf44f496)
+
+  (paper "A4")
+
+  (title_block
+    (title "Main")
+  )
+
+  (lib_symbols
+  )
+
+
+  (text "CHANGELOG/NOTES\n\nREV A: " (at 19.685 22.86 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid fba33dfb-ab80-431d-9e1c-7f90a16c8c17)
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)
