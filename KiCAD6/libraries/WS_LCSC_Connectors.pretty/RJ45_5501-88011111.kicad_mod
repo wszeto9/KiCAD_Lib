@@ -1,6 +1,6 @@
 (footprint "RJ45_5501-88011111" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 62FC43E2)
+  (tedit 63B29131)
   (descr "C3097726")
   (attr through_hole)
   (fp_text reference "REF**" (at 3.5 -10.5 unlocked) (layer "F.SilkS")
@@ -58,4 +58,9 @@
   (pad "6" thru_hole circle (at 5.1 2.54) (size 1.5 1.5) (drill 0.9) (layers *.Cu *.Mask) (tstamp c8d3e268-b553-4305-9ace-c83c77677a32))
   (pad "7" thru_hole circle (at 6.12 0) (size 1.5 1.5) (drill 0.9) (layers *.Cu *.Mask) (tstamp 38fd2b1a-eaa3-4058-acdf-79fa845f6cd9))
   (pad "8" thru_hole circle (at 7.14 2.54) (size 1.5 1.5) (drill 0.9) (layers *.Cu *.Mask) (tstamp 9f764ae1-d35f-45e4-8d22-9eed3bbfd347))
+  (model "${KICAD6_USER_SYMBOL_DIR}/WS_LCSC_Connectors.pretty/8p8c_eth_conn.stp"
+    (offset (xyz 7 -2.5 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 180))
+  )
 )
