@@ -2,7 +2,7 @@
 
   (uuid 352d7abe-fc72-4473-8b68-62eecf44f496)
 
-  (paper "A4")
+  (paper "USLetter")
 
   (title_block
     (title "Main")
