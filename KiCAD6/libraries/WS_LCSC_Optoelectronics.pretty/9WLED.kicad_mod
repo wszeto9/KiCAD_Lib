@@ -27,7 +27,7 @@
   (pad "6" smd rect (at -5.7 -1.7) (size 3.6 1) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 15e9c2b5-e852-4671-aa75-a0f5a8971049))
   (pad "7" smd circle (at 0 0) (size 5.9 5.9) (layers "F.Cu" "F.Paste" "F.Mask")
     (solder_paste_margin -1) (tstamp 5414f66f-f2a2-44d2-8862-822ff3800d7f))
-  (model ":KICAD6_USER_SYMBOL_DIR:WS_LCSC_Optoelectronics.pretty/9Wled.step"
+  (model "/9Wled.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
