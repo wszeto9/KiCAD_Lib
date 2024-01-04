@@ -11,3 +11,8 @@ First, the directories must be set up correctly. To do this, go to KiCAD -> Pref
 |WS_LIBRARY|KiCAD_LIB/KiCAD6/libraries|
 
 Next, add the symbol and footprint libraries to KiCAD. 
+
+## Useful Papers
+
+- [Aluminum Electrolytic vs Solid Polymer Capacitors](https://www.psma.com/sites/default/files/uploads/tech-forums-capacitor/presentations/is184-aluminum-electrolytic-vs-polymer-%E2%80%93two-technologies-%E2%80%93-various-opportunities.pdf)
+- [Selecting Capacitors for switching power converters](https://www.ti.com/lit/an/slta055/slta055.pdf)
