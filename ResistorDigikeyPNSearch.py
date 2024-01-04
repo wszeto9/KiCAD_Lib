@@ -20,17 +20,20 @@ def convert_resistor_code(input_value):
     else:
         letter = 'R'
         multiplier = 1
-
-    if('.' in input_value):
+        
+# the two accepted forms for resistor naming is 5.1K and 5K1. After this code, all resistors should be in form 5K100000. The zeros add a buffer in case they need to be spliced off at the end. 
+    if('.' in input_value): 
         input_value = input_value.replace(letter, '')
     input_value = input_value.replace('.', letter)
     output_value = input_value + '0000000'
-    return output_value[:4]
+    return output_value[:4] # Stackpole uses 3 sig figs + a letter for resistor naming
 
 with open('bom2.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     first_row = next(csv_reader)
+    
+    # determine the index of the value and footprint row. this helps identify the column to look for resistor values in. 
     IndexOfValue = first_row.index('Value') if 'Value' in first_row else None
     if(IndexOfValue == None):
         print("Error! Could not find column named 'Value'!")
@@ -47,4 +50,5 @@ with open('bom2.csv') as csv_file:
             #Stockpole naming
             NamePrefix = 'RMCF'
             Packaging = 'FT'
-            print(NamePrefix+ footprint + Packaging + resistanceCode)
+            Suffix = 'CT-ND'
+            print(NamePrefix+ footprint + Packaging + resistanceCode + Suffix) #remove suffix if you want Manufacturer product number, keep it if you want digikey part number
