@@ -10,6 +10,8 @@ First, the directories must be set up correctly. To do this, go to KiCAD -> Pref
 |KICAD_USER_TEMPLATE_DIR|KiCAD_Lib/KiCAD6/template|
 |WS_LIBRARY|KiCAD_LIB/KiCAD6/libraries|
 
+![KiCAD Path Directory Image](./KiCADLibDirectory.png)
+
 Next, add the symbol and footprint libraries to KiCAD. 
 
 ## Useful Papers
