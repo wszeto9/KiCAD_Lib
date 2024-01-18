@@ -28,7 +28,7 @@ def convert_resistor_code(input_value):
     output_value = input_value + '0000000'
     return output_value[:4] # Stackpole uses 3 sig figs + a letter for resistor naming
 
-with open('bom2.csv') as csv_file:
+with open('George.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     first_row = next(csv_reader)
@@ -50,5 +50,7 @@ with open('bom2.csv') as csv_file:
             #Stockpole naming
             NamePrefix = 'RMCF'
             Packaging = 'FT'
+            if("0R00" in resistanceCode):
+                Packaging = "ZT"
             Suffix = 'CT-ND'
             print(NamePrefix+ footprint + Packaging + resistanceCode + Suffix) #remove suffix if you want Manufacturer product number, keep it if you want digikey part number
