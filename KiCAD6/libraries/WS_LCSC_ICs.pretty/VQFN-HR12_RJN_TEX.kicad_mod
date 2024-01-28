@@ -118,4 +118,9 @@
   (pad "10" smd rect (at 0.250063 -1.4 90) (size 0.6096 0.254) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 0ce30572-2f43-4c8e-ab7f-8c96d871274e))
   (pad "11" smd rect (at -0.250063 -1.4 90) (size 0.6096 0.254) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp ea609e43-4591-4b4e-abae-2c4b5792c837))
   (pad "12" smd rect (at -0.750189 -1.4 90) (size 0.6096 0.254) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp a3962df6-a09a-4b70-a75c-c25324220354))
+  (model ":KICAD6_USER_SYMBOL_DIR:WS_LCSC_ICs.pretty/VQFN12-HR.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 180))
+  )
 )

@@ -9,7 +9,9 @@ Capacitors = [
     ["470nF", "25V", "0603", "1276-2082-1-ND"],
     ["1nF", "50V", "0603", "1276-1091-1-ND"],
     ["2.2nF", "100V", "0603", "1276-6583-1-ND"],
-    ["100pF", "50V", "0603", "1276-1008-1-ND"]
+    ["100pF", "50V", "0603", "1276-1008-1-ND"],
+    ["22uF", "16V", "0603", "1276-7076-1-ND"],
+    ["10nF", "50V", "0603", "1276-1009-1-ND"]
     ]
 
 import csv
@@ -47,7 +49,7 @@ def GetCapacitorPN(input_value, package, voltageRating):
                     return parts[3]
     return "" 
 
-with open('George.csv') as csv_file:
+with open('via.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     first_row = next(csv_reader)

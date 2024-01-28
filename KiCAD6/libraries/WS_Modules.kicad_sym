@@ -181,7 +181,7 @@
       )
       (pin power_in line (at 15.24 -30.48 180) (length 5.08) hide
         (name "GND" (effects (font (size 1.016 1.016))))
-        (number "41_1" (effects (font (size 1.016 1.016))))
+        (number "41" (effects (font (size 1.016 1.016))))
       )
       (pin power_in line (at 15.24 -30.48 180) (length 5.08) hide
         (name "GND" (effects (font (size 1.016 1.016))))

@@ -8,6 +8,8 @@ def convert_resistor_code(input_value):
     input_value = input_value.replace('k', 'K') # All letters now uppercase (assume M/m will not be confused with each other)
     
     #save the multiplier of the code
+    if(input_value == '0'):
+        input_value = '0R'
     if('K' in input_value):
         letter = 'K'
         multiplier = 1000
@@ -25,10 +27,12 @@ def convert_resistor_code(input_value):
     if('.' in input_value): 
         input_value = input_value.replace(letter, '')
     input_value = input_value.replace('.', letter)
+    if(letter != 'R'):
+        input_value = input_value.replace('R', '')
     output_value = input_value + '0000000'
     return output_value[:4] # Stackpole uses 3 sig figs + a letter for resistor naming
 
-with open('George.csv') as csv_file:
+with open('via.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     first_row = next(csv_reader)
