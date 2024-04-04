@@ -11,7 +11,10 @@ Capacitors = [
     ["2.2nF", "100V", "0603", "1276-6583-1-ND"],
     ["100pF", "50V", "0603", "1276-1008-1-ND"],
     ["22uF", "16V", "0603", "1276-7076-1-ND"],
-    ["10nF", "50V", "0603", "1276-1009-1-ND"]
+    ["10nF", "50V", "0603", "1276-1009-1-ND"],
+    ["100nF", "50V", "0805", "1276-1003-1-ND"],
+    ["1uF", "50V", "0805", "1276-1029-1-ND"],
+    
     ]
 
 import csv
@@ -49,7 +52,7 @@ def GetCapacitorPN(input_value, package, voltageRating):
                     return parts[3]
     return "" 
 
-with open('via.csv') as csv_file:
+with open('BOM.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     first_row = next(csv_reader)
@@ -63,8 +66,8 @@ with open('via.csv') as csv_file:
         print("Error! Could not find column named 'Value'!")
   
     for row in csv_reader:
-        if('Capacitor_SMD:' in row[IndexOfFootprint]):
-            footprint = row[IndexOfFootprint].split('Capacitor_SMD:')[1][2:6] #Returns 4 letter code from KiCAD footprint
+        if('C_' in row[IndexOfFootprint]):
+            footprint = row[IndexOfFootprint].split('C_')[1][:4] #Returns 4 letter code from KiCAD footprint
             capacitance = row[IndexOfValue].split(' ')[0].split('/')[0] # Grabs Resistance value from KiCAD footprint. It chucks tolerances for now lol
             if(len(row[IndexOfValue].split(' ')) > 1):
                 voltage = row[IndexOfValue].split(' ')[1]

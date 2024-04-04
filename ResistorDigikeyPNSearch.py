@@ -32,7 +32,7 @@ def convert_resistor_code(input_value):
     output_value = input_value + '0000000'
     return output_value[:4] # Stackpole uses 3 sig figs + a letter for resistor naming
 
-with open('via.csv') as csv_file:
+with open('BOM.csv') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     line_count = 0
     first_row = next(csv_reader)
