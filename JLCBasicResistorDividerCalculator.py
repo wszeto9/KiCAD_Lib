@@ -32,7 +32,7 @@ def FindOptimalResistorDivider(vin, vout, ResistorList = AvailableResistors, Min
             Options.remove(Entry)
     return Options
 
-Options = FindOptimalResistorDivider(48, 0.7)
+Options = FindOptimalResistorDivider(48, 5)
 
 for i in range(5):
     print("Option ", i, ": Rhigh = ", Options[i][1]/1000, "kOhms, Rlow = ", Options[i][2]/1000, "kOhms, Vout_Actual: ", round(Options[i][3], 4), "V, Vin_Actual: ", round(Options[i][4], 3), "V")

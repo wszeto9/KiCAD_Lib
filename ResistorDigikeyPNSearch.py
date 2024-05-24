@@ -46,9 +46,11 @@ with open('BOM.csv') as csv_file:
         print("Error! Could not find column named 'Value'!")
   
     for row in csv_reader:
-        if('Resistor_SMD' in row[IndexOfFootprint]):
-            footprint = row[IndexOfFootprint].split('Resistor_SMD:R_')[1][:4] #Returns 4 letter code from KiCAD footprint
+        if('R_' in row[IndexOfFootprint]):
+            footprint = row[IndexOfFootprint].split('R_')[1][:4] #Returns 4 letter code from KiCAD footprint
             resistance = row[IndexOfValue].split(' ')[0].split('/')[0] # Grabs Resistance value from KiCAD footprint. It chucks tolerances for now lol
+            if(footprint in resistance):
+                resistance = row[IndexOfValue].split(footprint)[1].split(',')[1]
             resistanceCode = convert_resistor_code(resistance)
             
             #Stockpole naming
