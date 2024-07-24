@@ -27,6 +27,7 @@ def GetCapacitorPN(input_value, package, voltageRating):
     input_value = input_value.replace('U', 'u')
     input_value = input_value.replace('N', 'n')
     input_value = input_value.replace('P', 'p')
+    
     #save the multiplier of the code
     if('p' in input_value):
         letter = 'p'
@@ -36,7 +37,7 @@ def GetCapacitorPN(input_value, package, voltageRating):
         letter = 'u'
     else:
         return ""
-        
+
     if(float(input_value.split(letter)[0])<1):
         letterOld = letter
         if(letter == 'n'):
@@ -69,8 +70,17 @@ with open('BOM.csv') as csv_file:
         if('C_' in row[IndexOfFootprint]):
             footprint = row[IndexOfFootprint].split('C_')[1][:4] #Returns 4 letter code from KiCAD footprint
             capacitance = row[IndexOfValue].split(' ')[0].split('/')[0] # Grabs Resistance value from KiCAD footprint. It chucks tolerances for now lol
-            if(len(row[IndexOfValue].split(' ')) > 1):
-                voltage = row[IndexOfValue].split(' ')[1]
+            
+            #JLC lib has the size in the value. remove it. 
+            if((capacitance[:4]) in ["0201", "0402", "0603", "0805", "1206"]):
+                capacitance = capacitance[5:]
+                if(',' in capacitance):
+                    capacitance = capacitance.split(',')[0]
+            
+            if(len(row[IndexOfValue].split('V')) > 1):
+                voltage = row[IndexOfValue].split('V')[0] + "V"
+                if(',' in voltage):
+                    voltage = voltage.split(',')[len(voltage.split(',')) - 1 ]
             else:
                 voltage = "25V"
             PartNumber = GetCapacitorPN(capacitance, footprint, voltage)
